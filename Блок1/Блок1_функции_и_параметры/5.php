@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types=1); //declaration
 
 function generatePassword(int $length = 8, bool $includeNumbers = true, bool $includeSpecialChars = false)
 {
