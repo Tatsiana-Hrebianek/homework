@@ -1,15 +1,15 @@
 <?php
 
-// function getStatusMessage(string $status): string {
-//     return match($status) {
-//         'success' => 'Операция выполнена успешно',
-//         'error' => 'Произошла ошибка',
-//         'pending' => 'Операция в ожидании',
-//         default => 'Неизвестный статус',
-//     };
-// }
+function getStatusMessage(string $status): string {
+    return match($status) {
+        'success' => 'Операция выполнена успешно',
+        'error' => 'Произошла ошибка',
+        'pending' => 'Операция в ожидании',
+        default => 'Неизвестный статус',
+    };
+}
 
-// echo getStatusMessage('unknown');
+echo getStatusMessage('unknown');
 
 function calculatePrice(float $basePrice, float $discount, float $tax): float{
     
