@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4":{
+            "App\\Models\\": "Block2/namespace_autoload/",
+            "App\\Services\\": "Block2/namespace2/",
+            "App\\Interfaces\\": "Block2/namesp_interfaces",
+            "App\\Traits\\": "Block2/namespace_traits"
+        }
+    }
+}
