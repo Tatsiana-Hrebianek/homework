@@ -19,7 +19,7 @@ $channel = $connection->channel();
 $channel->queue_declare(
     'task_queue', // имя очереди
     false,        // passive
-    true,         // durable (сохранится после перезапуска RabbitMQ)
+    false,         // durable (сохранится после перезапуска RabbitMQ)
     false,        // exclusive
     false         // auto-delete
 );
