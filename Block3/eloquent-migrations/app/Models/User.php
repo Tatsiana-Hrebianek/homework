@@ -45,4 +45,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected static function booted()
+{
+    static::creating(function ($user) {
+        if (empty($user->email)) {
+            $user->email = uniqid('user') . '@example.com';
+        }
+        if (empty($user->password)) {
+            $user->password = bcrypt('defaultpassword');
+        }
+    });
+}
+
 }
