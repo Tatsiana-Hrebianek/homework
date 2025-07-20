@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-4":{
+            "App\\Models\\": "Block2/namespace_autoload/",
+            "App\\Services\\": "Block2/namespace2/",
+            "App\\Interfaces\\": "Block2/namesp_interfaces",
+            "App\\Traits\\": "Block2/namespace_traits",
+            "App3\\EloquentDoctrineORM\\Models\\": "Block3/EloquentDoctrineORM/models",
+            "App3\\EloquentDoctrineORM\\": "Block3/EloquentDoctrineORM",
+            "App3\\": "Block3"
+        }
+    },
+    "require": {
+        "illuminate/database": "^12.19",
+        "symfony/cache": "^7.3"
+    }
+}

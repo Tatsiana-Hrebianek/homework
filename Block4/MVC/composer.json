@@ -1,0 +1,19 @@
+{
+    "name": "tatsiana/mvc",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tatsiana Hrebianek",
+            "email": "tatsiana.hrebianek@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php-di/php-di": "^7.0"
+    }
+}
