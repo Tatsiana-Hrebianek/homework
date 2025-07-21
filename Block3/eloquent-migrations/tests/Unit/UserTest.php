@@ -11,7 +11,6 @@ class UserTest extends TestCase
     use RefreshDatabase;
 
     /** @test */    
-
     public function testUserCanBeCreated()
     {
         $user = User::create([
@@ -30,4 +29,17 @@ class UserTest extends TestCase
         $this->assertEquals('alice@example.com', $user->email);
     }  
 
+    /** @test */
+    public function testUserFullName() {
+
+        $user = User::create([
+            'name' => 'Alice2 Smith',
+            'first_name' => 'Alice2',
+            'last_name' => 'Smith',
+            'email' => 'alice2@example.com',
+            'password' => bcrypt('secret2'),
+        ]);
+
+        $this->assertEquals('Alice2 Smith', $user->getFullName());
+    }
 }
