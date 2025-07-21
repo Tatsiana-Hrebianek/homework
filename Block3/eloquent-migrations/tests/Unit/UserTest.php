@@ -12,7 +12,7 @@ class UserTest extends TestCase
 
     /** @test */    
 
-    public function user_can_be_created()
+    public function testUserCanBeCreated()
     {
         $user = User::create([
             'name' => 'Alice',
@@ -26,13 +26,8 @@ class UserTest extends TestCase
         ]);
 
         $this->assertInstanceOf(User::class, $user);
-    }
-
-    // public function user_can_be_created_with_seeder()
-    // {
-    //     $this->seed(\Database\Seeders\UserSeeder::class);
-
-    //     $this->assertEquals(10, User::count());
-    // }
+        $this->assertEquals('Alice', $user->name);
+        $this->assertEquals('alice@example.com', $user->email);
+    }  
 
 }
