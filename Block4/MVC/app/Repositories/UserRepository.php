@@ -15,4 +15,12 @@ class UserRepository implements UserRepositoryInterface{
         $stmt = $this->pdo->query("SELECT name, email FROM users");
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    public function findUserByEmail(string $email): array
+    {
+        $stmt = $this->pdo->query("SELECT * FROM users WHERE email = :email");
+        $stmt->execute(['email' => $email]);
+        
+        return $stmt->fetch('\PDO::FETCH_ASSOC');
+    }
 }
