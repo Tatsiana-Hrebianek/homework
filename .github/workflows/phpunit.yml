@@ -27,6 +27,6 @@ jobs:
               run: composer install --no-progress --no-suggest
 
             - name: Запуск тестов
-              run: vendor/bin/phpunit
+              run: Block3/eloquent-migrations/vendor/bin/phpunit
 
 
