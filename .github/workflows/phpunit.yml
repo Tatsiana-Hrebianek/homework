@@ -22,11 +22,17 @@ jobs:
                 php-version: "8.2"
                 extensions: mbstring, pdo, pdo_mysql
                 coverage: none
-                
-            - name: Установка зависимостей
-              run: composer install --no-progress --no-suggest
+            
+            - name: Переход в поддиректорию проекта
+              working-directory: Block3/eloquent-migrations
+              run: |
+                composer install --no-progress
+                ./vendor/bin/phpunit
 
-            - name: Запуск тестов
-              run: Block3/eloquent-migrations/vendor/bin/phpunit
+            # - name: Установка зависимостей
+            #   run: composer install --no-progress --no-suggest
+
+            # - name: Запуск тестов
+            #   run: Block3/eloquent-migrations/vendor/bin/phpunit
 
 
