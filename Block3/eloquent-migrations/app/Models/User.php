@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'first_name',
+        'last_name',
     ];
 
     /**
@@ -56,6 +58,10 @@ class User extends Authenticatable
             $user->password = bcrypt('defaultpassword');
         }
     });
+}
+
+public function getFullName(): string {
+    return trim("{$this->first_name} {$this->last_name}");
 }
 
 }
