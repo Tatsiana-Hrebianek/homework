@@ -1,6 +1,12 @@
 name: PHPUnit Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - block5-tests
+  pull_request:
+    branches:
+      - block5-tests
 
 jobs:
     test:
