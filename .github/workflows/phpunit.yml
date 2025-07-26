@@ -20,14 +20,39 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                 php-version: "8.2"
-                extensions: mbstring, pdo, pdo_mysql
+                extensions: mbstring, pdo, pdo_sqlite
                 coverage: none
             
-            - name: Переход в поддиректорию проекта
+            - name: Установка зависимостей
+              run: composer install --no-progress --prefer-dist
               working-directory: Block3/eloquent-migrations
+
+            - name: Создание .env для тестов
               run: |
-                composer install --no-progress
-                ./vendor/bin/pest
+                echo "APP_NAME=Laravel" > .env
+                echo "APP_ENV=testing" >> .env
+                echo "APP_KEY=" >> .env
+                echo "APP_DEBUG=true" >> .env
+                echo "APP_URL=http://localhost" >> .env
+                echo "DB_CONNECTION=sqlite" >> .env
+                echo "DB_DATABASE=:memory:" >> .env
+              working-directory: Block3/eloquent-migrations
+
+            - name: Генерация APP_KEY
+              run: php artisan key:generate
+              working-directory: Block3/eloquent-migrations
+
+            - name: Прогон тестов Pest
+              run: ./vendor/bin/pest
+              working-directory: Block3/eloquent-migrations    
+
+
+
+            # - name: Переход в поддиректорию проекта
+            #   working-directory: Block3/eloquent-migrations
+            #   run: |
+            #     composer install --no-progress
+            #     ./vendor/bin/pest
 
             # - name: Установка зависимостей
             #   run: composer install --no-progress --no-suggest
