@@ -27,7 +27,7 @@ jobs:
               working-directory: Block3/eloquent-migrations
               run: |
                 composer install --no-progress
-                ./vendor/bin/phpunit
+                ./vendor/bin/pest
 
             # - name: Установка зависимостей
             #   run: composer install --no-progress --no-suggest
