@@ -20,6 +20,10 @@ jobs:
                 extensions: mbstring, pdo, sqlite
                 coverage: none
 
+            - name: Установка зависимостей
+              run: composer install --no-progress --prefer-dist
+              working-directory: Block3/eloquent-migrations    
+
             - name: Create .env
               run: |
                 cp .env.example .env || touch .env
