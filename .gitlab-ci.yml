@@ -1,0 +1,25 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: php:8.2
+  before_script:
+    - apt-get update && apt-get install -y unzip sqlite3 libsqlite3-dev
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - composer install --no-progress --prefer-dist --working-dir=Block3/eloquent-migrations
+    - cp Block3/eloquent-migrations/.env.example Block3/eloquent-migrations/.env || touch Block3/eloquent-migrations/.env
+    - echo "APP_ENV=testing" >> Block3/eloquent-migrations/.env
+    - echo "APP_KEY=" >> Block3/eloquent-migrations/.env
+    - echo "DB_CONNECTION=sqlite" >> Block3/eloquent-migrations/.env
+    - echo "DB_DATABASE=:memory:" >> Block3/eloquent-migrations/.env
+    - php Block3/eloquent-migrations/artisan key:generate
+
+  script:
+    - |
+      if [ -f Block3/eloquent-migrations/vendor/bin/pest ]; then
+        Block3/eloquent-migrations/vendor/bin/pest
+      else
+        Block3/eloquent-migrations/vendor/bin/phpunit
+      fi
+
