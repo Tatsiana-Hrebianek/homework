@@ -1,0 +1,17 @@
+{
+    "name": "tatsiana/rabbit-mq",
+    "autoload": {
+        "psr-4": {
+            "Tatsiana\\RabbitMq\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tatsiana Hrebianek",
+            "email": "tatsiana.hrebianek@gmail.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "^3.7"
+    }
+}

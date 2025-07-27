@@ -1,0 +1,17 @@
+{
+    "name": "tatsiana/predis",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tatsiana Hrebianek",
+            "email": "tatsiana.hrebianek@gmail.com"
+        }
+    ],
+    "require": {
+        "predis/predis": "^3.0"
+    }
+}

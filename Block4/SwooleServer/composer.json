@@ -1,0 +1,17 @@
+{
+    "name": "tatsiana/swoole-server",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tatsiana Hrebianek",
+            "email": "tatsiana.hrebianek@gmail.com"
+        }
+    ],
+    "require": {
+        "swoole/ide-helper": "^6.0"
+    }
+}
