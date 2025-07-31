@@ -22,4 +22,6 @@ test:
       else
         Block3/eloquent-migrations/vendor/bin/phpunit
       fi
-#swrwe
+  workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
