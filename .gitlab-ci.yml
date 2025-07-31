@@ -17,12 +17,13 @@ test:
 
   script:
     - |
-      if [ -f Block3/eloquent-migrations/vendor/bin/pest ]; then
-        Block3/eloquent-migrations/vendor/bin/pest
+      cd Block3/eloquent-migrations
+      if [ -f vendor/bin/pest ]; then
+        vendor/bin/pest
       else
-        Block3/eloquent-migrations/vendor/bin/phpunit
+        vendor/bin/phpunit
       fi
-      
+
 workflow:
   rules:
     - if: '$CI_COMMIT_BRANCH'
