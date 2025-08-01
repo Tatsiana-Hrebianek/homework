@@ -18,6 +18,8 @@ jobs:
               with:
                 server: ${{ secrets.FTP_HOST }}
                 username: ${{ secrets.FTP_USER }}
-                password: ${{ secrets.FTP_KEY }}
+                password: ${{ secrets.FTP_PASSWORD }}
                 server-dir: /www
                 dangerous-clean-slate: false
+                dry-run: true
+
