@@ -14,7 +14,7 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Деплой на сервер
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              uses: appleboy/scp-action@v0.1.7
               with:
                 server: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USER }}
