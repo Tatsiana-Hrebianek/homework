@@ -1,0 +1,23 @@
+name: Deploy to Alwaysdata
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Checkout репозитория
+              uses: actions/checkout@v3
+
+            - name: Деплой на сервер
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                host: ${{ secrets.FTP_HOST }}
+                username: ${{ secrets.FTP_USER }}
+                password: ${{ secrets.FTP_KEY }}
+                server-dir: /www
+                dangerous-clean-slate: false
