@@ -23,7 +23,6 @@ jobs:
                 protocol: sftp
                 source: /www/test/
                 target: "/home/${{ secrets.SSH_USER }}/www/test"
-                timeout: 60s
                 local-dir: Block2/Абстрактн_классы_интерфейсы/                
                 timeout: 60s
                 # dry-run: true
