@@ -16,10 +16,10 @@ jobs:
             - name: Деплой на сервер
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
-                server: ${{ secrets.FTP_HOST }}
-                username: ${{ secrets.FTP_USER }}
-                password: ${{ secrets.FTP_PASSWORD }}
-                protocol: ftps
+                server: ${{ secrets.SSH_HOST }}
+                username: ${{ secrets.SSH_USER }}
+                password: ${{ secrets.SSH_KEY }}
+                protocol: sftp
                 server-dir: /www/test/
                 local-dir: Block2/Абстрактн_классы_интерфейсы/
                 exclude: |
