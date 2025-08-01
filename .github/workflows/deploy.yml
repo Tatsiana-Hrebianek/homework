@@ -20,7 +20,6 @@ jobs:
                 username: ${{ secrets.SSH_USER }}
                 password: ${{ secrets.SSH_KEY }}
                 port: 22
-                protocol: sftp
                 source: Block2/abstract_classes_interfaces/    
                 target: "/home/${{ secrets.SSH_USER }}/www/test"                            
                 timeout: 60s
