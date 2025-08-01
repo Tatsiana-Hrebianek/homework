@@ -20,7 +20,12 @@ jobs:
                 username: ${{ secrets.FTP_USER }}
                 password: ${{ secrets.FTP_PASSWORD }}
                 protocol: ftps
-                server-dir: /www/
+                server-dir: /www/test/
+                local-dir: Block2/Абстрактн_классы_интерфейсы
+                exclude: |
+                  **/*.log
+                timeout: 60000
+                security: loose
                 # dry-run: true
                 dangerous-clean-slate: false
                 
