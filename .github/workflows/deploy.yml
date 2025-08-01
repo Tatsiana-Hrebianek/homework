@@ -19,14 +19,13 @@ jobs:
                 host: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USER }}
                 password: ${{ secrets.SSH_KEY }}
+                port: 22
                 protocol: sftp
-                host-dir: /www/test/
-                local-dir: Block2/Абстрактн_классы_интерфейсы/
-                exclude: |
-                  **/*.log
-                timeout: 60000
-                security: loose
+                source: /www/test/
+                target: "/home/${{ secrets.SSH_USER }}/www/test"
+                timeout: 60s
+                local-dir: Block2/Абстрактн_классы_интерфейсы/                
+                timeout: 60s
                 # dry-run: true
-                dangerous-clean-slate: false
                 
 
