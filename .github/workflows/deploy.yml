@@ -21,9 +21,8 @@ jobs:
                 password: ${{ secrets.SSH_KEY }}
                 port: 22
                 protocol: sftp
-                source: /www/test/
-                target: "/home/${{ secrets.SSH_USER }}/www/test"
-                local-dir: Block2/abstract_classes_interfaces/                
+                source: Block2/abstract_classes_interfaces/    
+                target: "/home/${{ secrets.SSH_USER }}/www/test"                            
                 timeout: 60s
                 # dry-run: true
                 
