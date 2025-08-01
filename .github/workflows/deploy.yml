@@ -16,11 +16,11 @@ jobs:
             - name: Деплой на сервер
               uses: appleboy/scp-action@v0.1.7
               with:
-                server: ${{ secrets.SSH_HOST }}
+                host: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USER }}
                 password: ${{ secrets.SSH_KEY }}
                 protocol: sftp
-                server-dir: /www/test/
+                host-dir: /www/test/
                 local-dir: Block2/Абстрактн_классы_интерфейсы/
                 exclude: |
                   **/*.log
