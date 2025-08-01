@@ -21,7 +21,7 @@ jobs:
                 password: ${{ secrets.FTP_PASSWORD }}
                 protocol: ftps
                 server-dir: /www/test/
-                local-dir: Block2/Абстрактн_классы_интерфейсы
+                local-dir: Block2/Абстрактн_классы_интерфейсы/
                 exclude: |
                   **/*.log
                 timeout: 60000
