@@ -19,7 +19,9 @@ jobs:
                 server: ${{ secrets.FTP_HOST }}
                 username: ${{ secrets.FTP_USER }}
                 password: ${{ secrets.FTP_PASSWORD }}
+                protocol: sftp
                 server-dir: /www/
-                dangerous-clean-slate: false
                 dry-run: true
+                dangerous-clean-slate: false
+                
 
