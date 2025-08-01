@@ -21,7 +21,7 @@ jobs:
                 password: ${{ secrets.FTP_PASSWORD }}
                 protocol: ftps
                 server-dir: /www/
-                dry-run: true
+                # dry-run: true
                 dangerous-clean-slate: false
                 
 
