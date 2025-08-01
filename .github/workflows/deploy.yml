@@ -23,7 +23,7 @@ jobs:
                 protocol: sftp
                 source: /www/test/
                 target: "/home/${{ secrets.SSH_USER }}/www/test"
-                local-dir: Block2/Абстрактн_классы_интерфейсы/                
+                local-dir: Block2/abstract_classes_interfaces/                
                 timeout: 60s
                 # dry-run: true
                 
