@@ -13,7 +13,7 @@ use App\Services\UserService;
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);//!!!!
 // echo $_SERVER['REQUEST_URI'];
 
-$pdo = new PDO("mysql:host=localhost;dbname=test_database;charset=utf8mb4", "tatsiana", "");
+$pdo = new PDO("mysql:host=db;dbname=test_database;charset=utf8mb4", "tatsiana", "userpass");
 $userModel = new User($pdo);
 $userRepository = new UserRepository($pdo);
 $userService = new UserService($userRepository);
@@ -22,7 +22,10 @@ $showUsersController = new ShowUsersController($userService);
 
 // print_r($userService->getUsers());
 
-if ($uri === '/users' && isset($_GET['email'])) {
+if ($uri === '/') {
+    echo "Добро пожаловать!";
+}
+elseif ($uri === '/users' && isset($_GET['email'])) {
    $email = $_GET['email'] ?? null;
    $controller->showUser($email);
 } elseif ($uri === '/users') {
